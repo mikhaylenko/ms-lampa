@@ -1,0 +1,11 @@
+pages:
+  stage: deploy
+  script:
+    - mkdir public
+    - cp -r * public/
+    - rm -rf public/public # На всякий случай, чтобы не зациклилось
+  artifacts:
+    paths:
+      - public
+  only:
+    - main
